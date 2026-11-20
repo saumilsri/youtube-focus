@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YouTube Focus Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>YouTube Focus</h1>
+
+    <section>
+      <h2>Current batch</h2>
+      <div id="batch"></div>
+      <div class="row">
+        <button id="newBatch" type="button">Pick a new batch on next home visit</button>
+        <button id="clearSeen" type="button" class="secondary">Clear seen history</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Picking</h2>
+      <div class="grid3">
+        <label>Lock time (minutes)
+          <input id="lockMinutes" type="number" min="0.1" step="any">
+        </label>
+        <label>Videos per batch
+          <input id="batchSize" type="number" min="1" max="10" step="1">
+        </label>
+        <label>Max fun videos
+          <input id="maxFun" type="number" min="0" max="10" step="1">
+        </label>
+      </div>
+      <p class="hint">Picks follow YouTube's own ranking. A fun video only appears when YouTube ranks one near the top, and never more than the max. Set the max to 0 for none. Changing the lock time also changes when the current batch expires.</p>
+    </section>
+
+    <section>
+      <h2>Keywords</h2>
+      <p class="hint">One per line. Plain text matches whole words, ignoring case. Write <code>/pattern/flags</code> for a regular expression.</p>
+      <div class="grid3">
+        <label>Lecture (filtered out)
+          <textarea id="lectureKeywords" rows="12" spellcheck="false"></textarea>
+        </label>
+        <label>Serious
+          <textarea id="seriousKeywords" rows="12" spellcheck="false"></textarea>
+        </label>
+        <label>Fun
+          <textarea id="funKeywords" rows="12" spellcheck="false"></textarea>
+        </label>
+      </div>
+      <button id="resetKeywords" type="button" class="secondary">Restore default keywords</button>
+    </section>
+
+    <section>
+      <h2>Long music</h2>
+      <p class="hint">Filters out videos at least this long whose title has one of these words, like a 3 hour work instrumental. Shorter music videos are kept.</p>
+      <div class="grid2">
+        <label>Minimum length (minutes)
+          <input id="musicMinMinutes" type="number" min="0" step="any">
+        </label>
+        <label>Music keywords
+          <textarea id="musicKeywords" rows="8" spellcheck="false"></textarea>
+        </label>
+      </div>
+    </section>
+
+    <section>
+      <h2>Channels</h2>
+      <div class="grid2">
+        <label>Skipped channels (one per line)
+          <textarea id="skipChannels" rows="8" spellcheck="false"></textarea>
+        </label>
+        <label>Channel types (<code>Channel name = fun</code> or <code>= serious</code>)
+          <textarea id="channelTypes" rows="8" spellcheck="false"></textarea>
+        </label>
+      </div>
+    </section>
+
+    <section>
+      <h2>Try a title</h2>
+      <div class="grid2">
+        <label>Title <input id="testTitle" type="text" placeholder="e.g. Why the Roman Empire fell"></label>
+        <label>Channel (optional) <input id="testChannel" type="text"></label>
+        <label>Length (optional) <input id="testDuration" type="text" placeholder="e.g. 3:00:00"></label>
+      </div>
+      <p id="testResult" class="hint"></p>
+      <p class="hint">Uses the saved settings.</p>
+    </section>
+
+    <div class="savebar">
+      <button id="save" type="button">Save</button>
+      <span id="status" role="status"></span>
+    </div>
+  </main>
+  <script src="shared.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
