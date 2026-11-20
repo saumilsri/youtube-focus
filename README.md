@@ -2,6 +2,17 @@
 
 A Chrome extension (Manifest V3) that turns the YouTube home page into a short, deliberate list instead of an endless feed. No API key, nothing sent anywhere: it only reads the recommendations YouTube already loads.
 
+## Why
+
+I quit doomscrolling Instagram and TikTok, but I still like YouTube. Longer videos are often genuinely informative. I use it in two ways:
+
+1. **Learning something specific** (for work or otherwise). Search handles this fine: I look it up, or get sent a link.
+2. **Browsing to discover interesting things.** This is where it goes wrong.
+
+There are extensions that blank out the YouTube feed entirely, so you only see what you search for. I like that idea, but it throws away discovery. The real problem with the normal feed isn't that recommendations exist. It's that there are *too many good ones*. I'd scroll, keep adding videos to Watch later, and keep browsing. That's doomscrolling through a loophole: always thinking "I could watch this" instead of watching what's in front of me.
+
+YouTube Focus keeps the search bar and adds just **3 recommendations** under it. They stay the same for 2 hours, even if you refresh. Those are the only videos on offer until the timer runs out, so the choice is small and you actually watch something. The shelf gives a few videos a place to wait for later in the day, without piling up an endless Watch later list.
+
 ## What it does
 
 **Home page**
@@ -65,3 +76,7 @@ If the gear ever becomes unreachable, open the extension's **Details** to find i
 ```bash
 node --test tests/logic.test.js
 ```
+
+## License
+
+[MIT](LICENSE). Free to use, change and share.
